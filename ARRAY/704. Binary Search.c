@@ -26,9 +26,8 @@ nums is sorted in ascending order.
 */
 
 /* 
-Solution 1: 
+Solution 1. Runtime: 0ms, Memory: 9.28MB
 */
-
 int search(int* nums, int numsSize, int target) {
     int left = 0;
     int right = numsSize - 1;
@@ -38,7 +37,7 @@ int search(int* nums, int numsSize, int target) {
             right = middle - 1;
         }
         else if(nums[middle] < target){
-             left = middle + 1;
+            left = middle + 1;
         }
         else{
             return middle;
@@ -46,3 +45,19 @@ int search(int* nums, int numsSize, int target) {
     }
     return -1;
 }
+
+/* 
+Solution 2. Runtime: 0ms, Memory: 9.22MB
+*/
+int search(int* nums, int numsSize, int target) {
+    int left = 0;
+    int right = numsSize - 1;
+    while(left <= right){
+        int middle = left + (right - left)/2;
+        if(nums[middle] == target) return middle;
+        if(nums[middle] < target) left = middle + 1;
+        else right = middle -1;
+    }
+    return -1;
+}
+
