@@ -46,3 +46,32 @@ Constraints:
 0 <= nums[i] <= 50
 0 <= val <= 100
 */
+
+/*
+Solution 1, Runtime 0ms, Memory 9.54MB
+*/
+
+int removeElement(int* nums, int numsSize, int val) {
+    int slow = 0;
+    for(int fast = 0; fast < numsSize; fast++){
+        if(nums[fast] != val){
+            nums[slow] = nums[fast];
+            slow++;
+        }
+    }
+    return slow;
+}
+
+/*
+Solution 2, Runtime 0ms, Memory 9.70MB
+*/
+
+int removeElement(int* nums, int numsSize, int val) {
+    int slow = 0;
+    for(int fast = 0; fast < numsSize; fast++){
+        if(nums[fast] != val){
+            nums[slow++] = nums[fast];
+        }
+    }
+    return slow;
+}
