@@ -29,7 +29,7 @@ Constraints:
 */
 
 /*
-Solution 1
+Solution 1 TC: 
 */
 
 #include <stdio.h>
@@ -65,7 +65,6 @@ int main(int argc, char *argv[])
         // so a[n+1] is the prefix sum of the elements containing n
         printf("%d\n", a[n+1] - a[m]);
     }
-
     free(a);
     return 0;
 }
